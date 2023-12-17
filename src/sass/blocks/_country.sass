@@ -1,0 +1,44 @@
+.country
+    @media(min-width: 1920px)
+        padding-top: 610px
+        padding-top: 510px
+    @include sm
+        padding-top: 200px
+    &__wrap
+        display: flex
+        @include sm
+            flex-direction: column
+    &__left
+        margin-right: 30px
+        display: flex
+        flex-direction: column
+        flex: 0 0 688px
+        @include md
+            flex: 0 0 628px
+        @include sm
+            margin-bottom: 100px
+            margin-right: 0
+            flex: 0 1 auto
+        @include xxs
+            margin-bottom: 70px
+    &__img
+        margin-top: -200px
+        margin-left: auto
+        width: 55%
+        img
+            width: 100%
+            min-height: 480px
+            object-fit: cover
+        @include sm
+            margin-top: -19%
+            margin-right: auto
+            width: 74%
+        @include xxs
+            width: 100%
+            img
+                min-height: 300px
+    &__right
+        padding-top: 360px
+        align-self: flex-end
+        @include sm
+            padding-top: 0

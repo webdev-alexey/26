@@ -1,0 +1,77 @@
+.features
+    &__wrap
+        padding-left: 100px
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        gap: 132px
+        @include md
+            gap: 104px
+        @include sm
+            padding-left: 70px
+            padding-right: 70px
+            grid-template-columns: 1fr
+            gap: 100px
+        @include xxs
+            padding-left: 90px
+            padding-right: 90px
+            gap: 70px
+        @include mini
+            padding-left: 40px
+            padding-right: 40px
+            align-items: center
+    &__item
+        @include sm
+            width: 400px
+        @include xs
+            width: 278px
+        @include xxs
+            width: 100%
+            display: flex
+            flex-direction: column-reverse
+            align-items: center
+        @include mini
+            margin-left: auto
+            margin-right: auto
+            width: 210px
+        &_reverse
+            padding-top: 60px
+            @include sm
+                margin-left: auto
+                padding-top: 0
+            @include xxs
+                flex-direction: column
+    &__name
+        position: relative
+        margin-left: -100px
+        margin-top: -40px
+        max-width: 278px
+        text-align: center
+        font-family: $arina
+        font-size: 70px
+        line-height: 100%
+        @include sm
+            margin-left: -70px
+        @include xxs
+            margin-left: 0
+            margin-top: 0
+            margin-bottom: -23px
+            font-size: 44px
+        @include mini
+            margin-bottom: -16px
+            font-size: 32px
+        &_bottom
+            margin-top: 0
+            margin-bottom: -37px
+            @include xxs
+                margin-bottom: -23px
+            @include mini
+                margin-bottom: -16px
+    &__img
+        img
+            width: 100%
+            object-fit: cover
+            min-height: 418px
+        @include xxs
+            width: 100%
+            img
+                min-height: 318px

@@ -1,0 +1,23 @@
+.header
+    padding: 48px 0
+    height: 100vh
+    display: flex
+    align-items: center
+    justify-content: center
+    &__wrap
+        display: flex
+        justify-content: center
+    &__logo
+        height: 56px
+        display: flex
+        align-items: center
+        overflow: hidden
+        transform: scale(2)
+        img
+            max-height: 100%
+            object-fit: contain
+            visibility: hidden
+            &:last-child
+                margin-left: 14px
+        @include xs
+            height: auto

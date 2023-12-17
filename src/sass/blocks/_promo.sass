@@ -1,0 +1,42 @@
+.promo
+    position: relative
+    margin-top: -90px
+    @include sm
+        margin-top: -68px
+    @include xxs
+        margin-top: -40px
+    @include mini
+        margin-top: -34px
+    &__title
+        visibility: hidden
+    &__wrap
+        display: flex
+        align-items: stretch
+        justify-content: flex-end
+        visibility: hidden
+        @include sm
+            margin-left: auto
+            max-width: 444px
+            flex-direction: column
+        @include xxs
+            max-width: 100%
+    &__info
+        margin-right: 30px
+        flex: 0 0 380px
+        @include sm
+            margin-right: 0
+            margin-bottom: 100px
+        @include xxs
+            margin-bottom: 70px
+    &__img
+        flex: 0 1 482px
+        img
+            height: 100%
+            object-fit: cover
+        @include sm
+            height: 576px
+            flex: 0 1 auto
+            img
+                width: 100%
+        @include xxs
+            height: 360px
