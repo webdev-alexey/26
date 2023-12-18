@@ -10,10 +10,13 @@
     &__title
         visibility: hidden
     &__wrap
+        min-height: 100vh
+        display: flex
+        align-items: center
+    &__inner
         display: flex
         align-items: stretch
         justify-content: flex-end
-        visibility: hidden
         @include sm
             margin-left: auto
             max-width: 444px
@@ -28,6 +31,18 @@
             margin-bottom: 100px
         @include xxs
             margin-bottom: 70px
+    &__left
+        margin-right: 30px
+        position: relative
+        flex: 1 1 auto
+    &__left-inner
+        position: absolute
+        width: 100%
+        bottom: 0
+        img
+            width: 100%
+    &__left1
+        margin-bottom: 30px
     &__img
         flex: 0 1 482px
         img
