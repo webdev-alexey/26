@@ -124,4 +124,26 @@ function anim() {
       },
       "<",
     );
+
+  // Секция 3
+  const tlFeatures = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".features__wrap",
+      start: "top 70%",
+      end: "top 40%",
+    },
+  });
+
+  tlFeatures
+    .to(".features__title", {
+      opacity: 0.1,
+    })
+    .from(".features__item", {
+      opacity: 0,
+      yPercent: "random([20, 40, 60])",
+      stagger: {
+        from: "center",
+        each: 0.1,
+      },
+    });
 }
