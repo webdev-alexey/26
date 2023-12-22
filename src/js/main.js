@@ -131,6 +131,7 @@ function anim() {
       trigger: ".features__wrap",
       start: "top 70%",
       end: "top 40%",
+      scrub: true,
     },
   });
 
@@ -146,4 +147,89 @@ function anim() {
         each: 0.1,
       },
     });
+
+  // Секция 4
+  gsap.set(".tradition", {
+    background: "#100f0d",
+  });
+  gsap.set(".tradition__title", {
+    color: "#edeae2",
+  });
+
+  const tlBg = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".tradition",
+      start: "top 50%",
+      end: "bottom 50%",
+      duration: 0.7,
+      toggleActions: "play reverse play reverse",
+    },
+  });
+
+  tlBg
+    .to("body", {
+      background: "#edeae2",
+    })
+    .to(
+      ".features__name",
+      {
+        color: "#bb9930",
+      },
+      "<",
+    )
+    .to(
+      ".tradition",
+      {
+        background: "#edeae2",
+      },
+      "<",
+    )
+    .to(
+      ".tradition__title",
+      {
+        color: "#bb9930",
+      },
+      "<",
+    );
+
+  // Паралакс картинок
+  gsap.set(".parallax img", {
+    scale: 1.3,
+    yPercent: 15,
+  });
+
+  const parallaxBlocks = document.querySelectorAll(".parallax");
+  parallaxBlocks.forEach((block) => {
+    const img = block.querySelector("img");
+    gsap.to(img, {
+      yPercent: -15,
+      scrollTrigger: {
+        trigger: block,
+        start: "top 80%",
+        end: "bottom 20%",
+        scrub: 1,
+      },
+    });
+  });
+
+  const tlCountry = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".country__right",
+      start: "top 40%",
+      end: "top 5%",
+      scrub: true,
+    },
+  });
+
+  tlCountry
+    .to(".country__title", {
+      opacity: 0.1,
+    })
+    .from(
+      ".country__right",
+      {
+        opacity: 0.1,
+      },
+      "<",
+    );
 }
