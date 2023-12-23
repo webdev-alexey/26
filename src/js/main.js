@@ -129,7 +129,7 @@ function anim() {
   const tlFeatures = gsap.timeline({
     scrollTrigger: {
       trigger: ".features__wrap",
-      start: "top 70%",
+      start: "top 85%",
       end: "top 40%",
       scrub: true,
     },
@@ -139,14 +139,18 @@ function anim() {
     .to(".features__title", {
       opacity: 0.1,
     })
-    .from(".features__item", {
-      opacity: 0,
-      yPercent: "random([20, 40, 60])",
-      stagger: {
-        from: "center",
-        each: 0.1,
+    .from(
+      ".features__item",
+      {
+        opacity: 0,
+        yPercent: "random([20, 30, 40])",
+        stagger: {
+          from: "center",
+          each: 0.1,
+        },
       },
-    });
+      "<",
+    );
 
   // Секция 4
   gsap.set(".tradition", {
@@ -319,4 +323,22 @@ function anim() {
       });
     }
   });
+
+  // Секция 6. Футер
+  const tlFooter = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".footer",
+      start: "90% bottom",
+    },
+  });
+  tlFooter
+    .from(".footer__bottom", {
+      autoAlpha: 0,
+    })
+    .from(".footer__logo", {
+      autoAlpha: 0,
+      scale: 0.6,
+      duration: 1,
+      ease: "bounce.out",
+    });
 }
