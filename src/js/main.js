@@ -232,4 +232,91 @@ function anim() {
       },
       "<",
     );
+
+  // Секция 5
+  gsap.set(".story", {
+    background: "#100f0d",
+  });
+  gsap.set(".story__title", {
+    color: "#edeae2",
+  });
+
+  const tlStory = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".story",
+      start: "top 50%",
+      end: "bottom 50%",
+      duration: 0.7,
+      toggleActions: "play reverse play reverse",
+    },
+  });
+
+  tlStory
+    .to("body", {
+      background: "#edeae2",
+    })
+    .to(
+      ".country__right",
+      {
+        color: "#bb9930",
+      },
+      "<",
+    )
+    .to(
+      ".story",
+      {
+        background: "#edeae2",
+      },
+      "<",
+    )
+    .to(
+      ".story__title",
+      {
+        color: "#bb9930",
+      },
+      "<",
+    );
+
+  const sections = gsap.utils.toArray(".slider__slide");
+
+  gsap.set(".slider__text", {
+    opacity: 0.1,
+  });
+
+  const tlHorisontal = gsap.to(".slider__wrapper", {
+    xPercent: -100 * (sections.length - 1),
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".slider__wrapper",
+      start: "top top",
+      end: `+=${sections.length * 1000}`,
+      pin: true,
+      scrub: true,
+    },
+  });
+
+  document.querySelectorAll(".slider__text").forEach((item, index) => {
+    if (index != 0) {
+      gsap.to(item, {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: item,
+          start: "left 60%",
+          end: "+=500",
+          scrub: 1,
+          containerAnimation: tlHorisontal,
+        },
+      });
+    } else {
+      gsap.to(item, {
+        opacity: 1,
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: ".slider__wrapper",
+          start: "top top",
+          toggleActions: "play reverse play reverse",
+        },
+      });
+    }
+  });
 }
