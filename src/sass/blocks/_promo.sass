@@ -35,6 +35,8 @@
         margin-right: 30px
         position: relative
         flex: 1 1 auto
+        @include sm
+            display: none
     &__left-inner
         position: absolute
         width: 100%
@@ -45,12 +47,16 @@
         margin-bottom: 30px
     &__img
         flex: 0 1 482px
+        visibility: hidden
         img
             height: 100%
             object-fit: cover
+        @include md
+            flex: 0 1 382px
         @include sm
             height: 576px
             flex: 0 1 auto
+            visibility: inherit
             img
                 width: 100%
         @include xxs

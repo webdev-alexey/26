@@ -13,6 +13,8 @@
         align-items: center
         overflow: hidden
         transform: scale(2)
+        @include sm
+            transform: none
         img
             max-height: 100%
             object-fit: contain
@@ -21,3 +23,5 @@
                 margin-left: 14px
         @include xs
             height: auto
+        @include xxs
+            height: 30px
